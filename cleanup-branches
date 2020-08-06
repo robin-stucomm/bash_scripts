@@ -1,0 +1,11 @@
+#!/bin/bash
+reserved=("master develop")
+IFS='
+'
+for line in `git branch --format='%(refname:short)'`; do
+    if [[ $line == *$in* ]]; then
+        if [[ ! " ${reserved[@]} " =~ "$line " ]]; then
+            git branch -D $line
+        fi
+    fi
+done

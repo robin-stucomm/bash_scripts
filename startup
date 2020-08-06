@@ -1,0 +1,2 @@
+#!/bin/bash
+gnome-terminal --geometry=150x50 --window -- set-tabs

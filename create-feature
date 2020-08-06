@@ -1,0 +1,5 @@
+#!/bin/bash
+
+branch=${1^^}
+git checkout -b feature/$branch
+git push -u origin feature/$branch

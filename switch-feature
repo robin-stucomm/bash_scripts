@@ -1,0 +1,40 @@
+#!/bin/bash
+in=$1
+branches=()
+checkoutBranch=""
+IFS='
+'
+for line in `git branch`; do
+    if [[ $line == *$in* ]]; then
+        branches+=($line)
+    fi
+done
+
+selectBranch() {
+    echo "Multiple branches were found, please select on of the following: "
+
+    for i in ${!branches[@]}; do
+        let "index=i+1"
+        echo "($index) ${branches[i]}"
+    done
+
+    read -p "Branch: " selectedBranch
+    checkoutBranch=${branches[((selectedBranch - 1))]}
+    checkoutBranch=`echo $checkoutBranch | xargs`
+}
+
+switchBranch() {
+    git checkout ${checkoutBranch}
+}
+
+len=${#branches[@]}
+if (( len == 0 )); then
+    git checkout feature/$in
+elif (( len > 1)); then
+    # It's possible that there are two branches with the same feature name, if that's the case ask the user to select one
+    selectBranch ${branches[@]}
+    switchBranch
+else
+    checkoutBranch=`echo ${branches[0]} | xargs`
+    switchBranch 
+fi
