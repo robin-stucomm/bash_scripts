@@ -29,7 +29,7 @@ switchBranch() {
 
 len=${#branches[@]}
 if (( len == 0 )); then
-    git checkout feature/$in
+    git checkout ${branches[0]}
 elif (( len > 1)); then
     # It's possible that there are two branches with the same feature name, if that's the case ask the user to select one
     selectBranch ${branches[@]}
