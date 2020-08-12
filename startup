@@ -1,2 +1,3 @@
 #!/bin/bash
-gnome-terminal --geometry=150x50 --window -- set-tabs
+dim=${STARTUP_DIM:-1}
+gnome-terminal --geometry=${dim} --window -- set-tabs
