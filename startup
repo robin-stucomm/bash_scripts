@@ -1,3 +1,10 @@
 #!/bin/bash
-dim=${STARTUP_DIM:-1}
+dim=${STARTUP_DIM:-150x50}
+
+# Open a window that launches the database (and all other docker stuff), the window will close once it's finnished
+gnome-terminal -e 'sh -c "cd $HOME/Documents/work/docker-dev; docker-compose up -d"'
+
+# Open all the default tabs
 gnome-terminal --geometry=${dim} --window -- set-tabs
+
+kill -9 $PPID
