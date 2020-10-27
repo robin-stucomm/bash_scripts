@@ -2,6 +2,5 @@
 gnome-terminal \
    --tab -t 'Git: Explorer' --working-directory="$HOME/Documents/work/explorer" \
    --tab -t 'Git: Plugins' --working-directory="$HOME/Documents/work/explorer-plugins" \
-   --tab -t 'Git: Releases' --working-directory="$HOME/Documents/work/explorer-releases" \
    --tab -t 'Git: Terra' --working-directory="$HOME/Documents/work/terra/terra-java" \
    --tab -t 'Git: Rest' --working-directory="$HOME/Documents/work/"
