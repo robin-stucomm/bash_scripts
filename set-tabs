@@ -4,4 +4,5 @@ gnome-terminal \
    --tab -t 'Git: Plugins' --working-directory="$HOME/Documents/work/explorer-plugins" \
    --tab -t 'Git: Terra' --working-directory="$HOME/Documents/work/terra/terra-java" \
    --tab -t 'Git: Portal' --working-directory="$HOME/Documents/work/terra/portal" \
-   --tab -t 'Git: Rest' --working-directory="$HOME/Documents/work/"
+   --tab -t 'Git: Rest' --working-directory="$HOME/Documents/work/" \
+   --tab -t 'Run: Portal' --working-directory="$HOME/Documents/work/terra/portal" \
