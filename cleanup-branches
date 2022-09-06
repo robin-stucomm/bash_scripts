@@ -1,5 +1,5 @@
 #!/bin/bash
-reserved=("master develop")
+reserved=("master develop staging")
 IFS='
 '
 for line in `git branch --format='%(refname:short)'`; do

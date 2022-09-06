@@ -1,0 +1,6 @@
+#!/bin/bash
+gnome-terminal \
+   --tab -t 'Git: Core' --working-directory="$HOME/Documents/work2/core-platform-apis" \
+   --tab -t 'Git: Campus Cloud' --working-directory="$HOME/Documents/work2/campus-cloud" \
+   --tab -t 'Git: Rest' --working-directory="$HOME/Documents/work2" \
+   --tab -t 'Run: Campus Cloud' --working-directory="$HOME/Documents/work2/campus-cloud" \

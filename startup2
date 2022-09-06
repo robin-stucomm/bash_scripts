@@ -1,0 +1,12 @@
+#!/bin/bash
+dim=${STARTUP_DIM:-150x50}
+
+# Open a window that launches the database (and all other docker stuff), the window will close once it's finnished
+gnome-terminal -e 'sh -c "cd $HOME/Documents/work2/core-platform-apis/local; docker-compose up -d"'
+# Open a window that launches the mock REST API
+#gnome-terminal -e 'sh -c "cd $HOME/Documents/work/mock-apis; docker-compose up -d"'
+
+# Open all the default tabs
+gnome-terminal --geometry=${dim} --window -- set-tabs2
+
+kill -9 $PPID
